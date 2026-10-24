@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josias Paredes Hazael - Portafolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Animación suave para la entrada */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#38bdf8', // Light blue/cyan for dark mode
+                        primaryHover: '#0ea5e9',
+                        darkBg: '#0f172a', // Slate 900
+                        cardBg: '#1e293b', // Slate 800
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-gray-300 antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full bg-darkBg/90 backdrop-blur-md z-50 border-b border-gray-800 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo / Nombre -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="text-xl font-bold text-white tracking-tight">Josias<span class="text-primary">.</span></a>
+                </div>
+                
+                <!-- Menú de escritorio -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-400 hover:text-primary transition-colors text-sm font-medium">Inicio</a>
+                    <a href="#habilidades" class="text-gray-400 hover:text-primary transition-colors text-sm font-medium">Habilidades</a>
+                    <a href="#proyectos" class="text-gray-400 hover:text-primary transition-colors text-sm font-medium">Proyectos</a>
+                    <a href="#contacto" class="text-gray-400 hover:text-primary transition-colors text-sm font-medium">Contacto</a>
+                </div>
+
+                <!-- Botón de menú móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-cardBg border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#inicio" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800">Inicio</a>
+                <a href="#habilidades" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800">Habilidades</a>
+                <a href="#proyectos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800">Proyectos</a>
+                <a href="#contacto" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-800">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12 fade-in-up">
+                
+                <!-- Textos -->
+                <div class="w-full md:w-3/5 text-center md:text-left">
+                    <span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 tracking-wider uppercase border border-primary/20">
+                        Desarrollador Junior
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4">
+                        Hola, soy <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Josias Paredes Hazael</span>
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
+                        Apasionado por la tecnología y el desarrollo de software. Construyendo soluciones web eficientes y aprendiendo nuevas herramientas cada día para crear un impacto positivo mediante el código.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#proyectos" class="px-8 py-3 border border-transparent text-base font-medium rounded-lg text-darkBg bg-primary hover:bg-primaryHover transition-all shadow-md hover:shadow-lg hover:shadow-primary/30">
+                            Ver mis proyectos
+                        </a>
+                        <a href="#contacto" class="px-8 py-3 border border-gray-600 text-base font-medium rounded-lg text-white bg-transparent hover:bg-gray-800 transition-all">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Foto de perfil -->
+                <div class="w-full md:w-2/5 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-cardBg ring-4 ring-primary/30">
+                        <!-- IMPORTANTE: El src de la imagen es perfil.jpg -->
+                        <img src="perfil.jpg" alt="Josias Paredes Hazael" class="object-cover w-full h-full hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decoraciones de fondo oscuro -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl -z-10"></div>
+    </header>
+
+    <!-- Sección Habilidades -->
+    <section id="habilidades" class="py-20 bg-cardBg border-y border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl">Mis Habilidades</h2>
+                <div class="mt-4 w-16 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Python -->
+                <div class="bg-darkBg p-6 rounded-xl border border-gray-800 text-center hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white">Python</h3>
+                    <p class="text-sm text-gray-400 mt-2">Desarrollo backend y scripts automatizados.</p>
+                </div>
+                <!-- HTML -->
+                <div class="bg-darkBg p-6 rounded-xl border border-gray-800 text-center hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white">HTML & Web</h3>
+                    <p class="text-sm text-gray-400 mt-2">Estructuración y creación de páginas web modernas.</p>
+                </div>
+                <!-- Lógica -->
+                <div class="bg-darkBg p-6 rounded-xl border border-gray-800 text-center hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white">Lógica de programación</h3>
+                    <p class="text-sm text-gray-400 mt-2">Creación de algoritmos y flujos de trabajo eficientes.</p>
+                </div>
+                <!-- Resolución -->
+                <div class="bg-darkBg p-6 rounded-xl border border-gray-800 text-center hover:border-primary/50 transition-colors">
+                    <div class="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white">Resolución de problemas</h3>
+                    <p class="text-sm text-gray-400 mt-2">Capacidad analítica para depurar y solucionar errores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="py-20 bg-darkBg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl">Mis Proyectos</h2>
+                <div class="mt-4 w-16 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">Demostrando mis habilidades a través de código real.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Proyecto 1 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-primary/30 transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-56 bg-gray-800 flex items-center justify-center">
+                        <!-- Placeholder de imagen oscura -->
+                        <span class="text-gray-500 font-medium">Vista del Proyecto</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardBg to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-xs font-semibold px-2 py-1 bg-darkBg text-primary border border-primary/20 rounded-md">HTML / Web</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Menú de Restaurante Chino</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Una interfaz web diseñada para visualizar los platillos de un restaurante chino. Incluye categorización de comidas y un diseño atractivo pensado para mejorar la experiencia del cliente.
+                        </p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-white font-medium hover:text-primary inline-flex items-center text-sm bg-primary/20 hover:bg-primary/30 px-4 py-2 rounded-lg transition-colors">
+                            Ver sitio web 
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-primary/30 transition-all duration-300 group">
+                    <div class="relative overflow-hidden h-56 bg-gray-800 flex items-center justify-center">
+                         <!-- Placeholder de imagen oscura -->
+                         <span class="text-gray-500 font-medium">Vista del Proyecto</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-cardBg to-transparent opacity-80"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-xs font-semibold px-2 py-1 bg-darkBg text-primary border border-primary/20 rounded-md">Python / Lógica</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Sistema de Gestión de Inventario para Retail</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Programa diseñado para administrar el stock de productos de un supermercado. Permite visualizar, actualizar y controlar la disponibilidad de los artículos (en stock / sin stock) en tiempo real.
+                        </p>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-white font-medium hover:text-primary inline-flex items-center text-sm bg-primary/20 hover:bg-primary/30 px-4 py-2 rounded-lg transition-colors">
+                            Ver código / web
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white sm:text-4xl">Ponte en contacto</h2>
+                <div class="mt-2 w-16 h-1 bg-primary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">¿Tienes un proyecto en mente o simplemente quieres saludar? Contáctame directamente por estos medios.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 max-w-4xl mx-auto">
+                <!-- Tarjeta de Email -->
+                <a href="mailto:josiasparedeshazael@gmail.com" class="group flex flex-col items-center p-8 bg-gray-800 rounded-2xl border border-gray-700 hover:border-primary hover:bg-gray-800/80 transition-all duration-300 w-full md:w-1/2 shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Email Personal</h3>
+                    <p class="text-gray-400 mb-4 text-center text-sm">Envíame un correo y te responderé lo antes posible.</p>
+                    <span class="text-primary font-medium group-hover:text-primaryHover transition-colors break-all">josiasparedeshazael@gmail.com</span>
+                </a>
+
+                <!-- Tarjeta de WhatsApp -->
+                <a href="https://wa.me/5491176141953" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center p-8 bg-gray-800 rounded-2xl border border-gray-700 hover:border-[#25D366] hover:bg-gray-800/80 transition-all duration-300 w-full md:w-1/2 shadow-lg cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-[#25D366] group-hover:scale-110 transition-transform duration-300 mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">WhatsApp</h3>
+                    <p class="text-gray-400 mb-4 text-center text-sm">Escríbeme para una respuesta rápida.</p>
+                    <span class="text-[#25D366] font-medium group-hover:text-[#1ebe5d] transition-colors">+54 9 11 76141953</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkBg py-8 border-t border-gray-800 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-white mb-2">Josias<span class="text-primary">.</span></h2>
+            <p class="text-gray-500 text-sm mt-4">
+                &copy; <span id="year"></span> Josias Paredes Hazael. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript -->
+    <script>
+        // Actualizar año del footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica del menú móvil
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+    </script>
+</body>
+</html>
